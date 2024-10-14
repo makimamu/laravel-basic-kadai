@@ -1,6 +1,6 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+// ルーティングを設定するコントローラを宣言する
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//そのURLにアクセスしたときに実行する処理」を(ルーティング)に直接記述する代わりにpostControllerのindexアクションを指定。
+Route::get('/posts', [PostController::class, 'index']);
