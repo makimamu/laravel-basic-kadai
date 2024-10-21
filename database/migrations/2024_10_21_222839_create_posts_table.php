@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('product_name');
-            $table->integer('price');
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id(); //ID自動再生
+            $table->string('title',255); //タイトル（最大255文字）
+            $table->text('content',); //本文
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('posts');
     }
 };

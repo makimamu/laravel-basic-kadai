@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller; // 追加
+//use App\Http\Controllers\Controller; // 追加
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller {
     public function index() {
-        return view('posts.index');  // viewの名前はファイルパスと一致させる
+
+        $posts = DB::table('posts')->get(); //postsテーブルから全データを取得
+        
+        return view('posts.index',['posts' => $posts]);  // viewに渡す
     }
 }
