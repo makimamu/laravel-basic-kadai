@@ -15,3 +15,7 @@ use App\Http\Controllers\PostController;
 
 //そのURLにアクセスしたときに実行する処理」を(ルーティング)に直接記述する代わりにpostControllerのindexアクションを指定。
 Route::get('/posts', [PostController::class, 'index']);
+
+/*【お願いリクエスト:「このページの情報をください」というお願いを出すGETメソッド】【名前がつけられたルートのことを、名前付きルートといいます。基本的に名前は自由につけられますが、posts.indexのように基準となるURL.アクション名とする。
+「/posts/1」「/posts/5」のように可変の値を含むURLにアクセスした際、PostControllerのshowアクションが実行されるようにルーティングを設定します。*/
+Route::get('/posts/{id}',[PostController::class, 'show']);
