@@ -20,20 +20,20 @@
     <h1>投稿一覧</h1>
 
     <table>
-        <thead>
+        <head>
             <tr>
                 <th>タイトル</th>
                 <th>本文</th>
             </tr>
-        </thead>
-        <tbody>
+        </head>
+        <body>
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->content }}</td>
                 </tr>
             @endforeach
-        </tbody>
+        </body>
     </table>
 </body>
 </html>

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    // マスアサインメントを許可するフィールド
+    protected $fillable = ['title', 'content'];
+
 }
